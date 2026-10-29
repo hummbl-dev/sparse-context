@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sparse-context"
+version = "0.1.0"
+description = "AST-level semantic context compressor for LLMs: extracts function signatures, docstrings, and call-graphs while pruning execution bodies."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "HUMMBL Dev Fleet", email = "238336761+hummbl-dev@users.noreply.github.com"}
+]
+keywords = ["ast", "llm-context", "compression", "prompt-engineering", "token-optimization"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Code Generators",
+]
+dependencies = []
+
+[project.scripts]
+sparse-context = "sparse_context.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sparse_context*"]
